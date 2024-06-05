@@ -7,6 +7,10 @@ def get_gpt_response(prompt):
     client = OpenAI(
         api_key=os.environ['OPENAI_API_KEY'],  # this is also the default, it can be omitted
     )
+    
+    # References:
+    # https://platform.openai.com/docs/api-reference/making-requests
+    # https://platform.openai.com/docs/api-reference/streaming
     response = client.chat.completions.create(
         model="gpt-3.5-turbo",
         messages=[
